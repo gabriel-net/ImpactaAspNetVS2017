@@ -17,11 +17,6 @@ namespace AspNet.Capitulo1.Frete
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void calcularButton_Click(object sender, EventArgs e)
         {
             var erros = ValidarFormulario();
@@ -123,13 +118,6 @@ namespace AspNet.Capitulo1.Frete
             }
 
             return erros;
-        }
-
-        private void freteTextBox_TextChanged(object sender, EventArgs e) 
-        {
-
-
-
         }
 
         private void limparButton_Click(object sender, EventArgs e) 

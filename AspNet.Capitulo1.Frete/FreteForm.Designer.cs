@@ -50,7 +50,6 @@
             this.label1.Size = new System.Drawing.Size(39, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "&Cliente";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -124,7 +123,6 @@
             this.freteTextBox.ReadOnly = true;
             this.freteTextBox.Size = new System.Drawing.Size(100, 20);
             this.freteTextBox.TabIndex = 7;
-            this.freteTextBox.TextChanged += new System.EventHandler(this.freteTextBox_TextChanged);
             // 
             // totalTextBox
             // 
