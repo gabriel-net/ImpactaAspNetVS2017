@@ -12,6 +12,7 @@ namespace Oficina.Repositorios.SistemaArquivos.Tests
     public class CorRepositorioTests
     {
         private CorRepositorio corRepositorio = new CorRepositorio();
+
         [TestMethod()]
         public void ObterTest()
         {
@@ -26,8 +27,8 @@ namespace Oficina.Repositorios.SistemaArquivos.Tests
         [TestMethod()]
         public void ObterPorIdTest()
         {
-            var cor = corRepositorio.Obter(1);
-            Assert.AreEqual(cor.Nome, "Branco");            //TESTES UNITARIOS, NÃO É USADO O CW (CONSOLE WRITTELINE), APENAS A VERIFICAÇÃO (FAROL VERDE)
+            var cor = corRepositorio.Obter(2);
+            Assert.AreEqual(cor.Nome, "Preto");            //TESTES UNITARIOS, NÃO É USADO O CW (CONSOLE WRITTELINE), APENAS A VERIFICAÇÃO (FAROL VERDE)
 
             cor = corRepositorio.Obter(8);
             Assert.IsNull(cor);
