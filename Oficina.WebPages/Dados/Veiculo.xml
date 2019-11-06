@@ -57,4 +57,23 @@
     <Ano>2014</Ano>
     <Observacao>Obs</Observacao>
   </Veiculo>
+  <Veiculo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Placa>ABC1234</Placa>
+    <Modelo>
+      <ID>6</ID>
+      <Nome>Mobi</Nome>
+      <Marca>
+        <ID>2</ID>
+        <Nome>Fiat</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <ID>2</ID>
+      <Nome>Preto</Nome>
+    </Cor>
+    <Combustivel>Gasolina</Combustivel>
+    <Cambio>Mecanico</Cambio>
+    <Ano>2019</Ano>
+    <Observacao>Carro para cadastro</Observacao>
+  </Veiculo>
 </veiculos>
