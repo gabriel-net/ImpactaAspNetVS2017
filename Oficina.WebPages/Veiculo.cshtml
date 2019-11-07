@@ -9,6 +9,29 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Cadastro de Veículos</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+        }
+
+        label {
+            min-width: 100px;
+            /*display:inline-block;*/
+            float: left
+        }
+
+        select, input {
+            min-width: 200px;
+            min-height: 24px;
+            margin-bottom: 5px;
+        }
+
+            input[type=submit] {
+                width: 300px;
+            }
+    </style>
 </head>
 <body>
     @if (IsPost)
@@ -81,7 +104,7 @@
 
         <label for="obervacao">Observação</label>
         <br>
-        <textarea name="observacao" id="observacao" cols="90" rows="10"></textarea>
+        <textarea name="observacao" id="observacao" cols="50" rows="10"></textarea>
         <br><br>
 
         <input type="submit" value="Gravar"/>
