@@ -46,6 +46,7 @@
     <Compile Include="CorRepositorio.cs" />
     <Compile Include="MarcaRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepositorioBase.cs" />
     <Compile Include="VeiculoRepositorio.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -53,9 +54,6 @@
       <Project>{EAE7CF18-FCEC-4E66-A71A-3FB9772EA14F}</Project>
       <Name>Oficina.Dominio</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Dados\Cor.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

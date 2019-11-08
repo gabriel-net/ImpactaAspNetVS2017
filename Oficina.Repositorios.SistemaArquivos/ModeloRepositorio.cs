@@ -10,11 +10,14 @@ using System.Xml.Linq;
 
 namespace Oficina.Repositorios.SistemaArquivos
 {
-    public class ModeloRepositorio
+    public class ModeloRepositorio : RepositorioBase
     {
-        static string caminhoArquivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, ConfigurationManager.AppSettings["caminhoArquivoModelo"]);
+        private readonly XDocument arquivoXml;
 
-        XDocument arquivoXml = XDocument.Load(caminhoArquivo);
+        public ModeloRepositorio() : base("caminhoArquivoModelo")
+        {
+            arquivoXml = XDocument.Load(CaminhoArquivo);
+        }
 
         public List<Modelo> ObterPorMarca(int marcaId)
         {

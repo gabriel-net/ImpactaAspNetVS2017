@@ -2,6 +2,7 @@
 using Oficina.Repositorios.SistemaArquivos;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 
@@ -25,6 +26,7 @@ namespace Oficina.WebPages
         public List<Modelo> Modelos { get; set; } = new List<Modelo>();
         public List<Combustivel> Combustiveis { get; set; }
         public List<Cambio> Cambios { get; set; }
+        public string MenssagemErro { get; private set; }
 
         private void PopularControles()
         {
@@ -45,20 +47,40 @@ namespace Oficina.WebPages
 
         public void Gravar()
         {
-            var veiculo = new VeiculoPasseio();
-            var formulario = HttpContext.Current.Request.Form;
+            try
+            {
+                var veiculo = new VeiculoPasseio();
+                var formulario = HttpContext.Current.Request.Form;
 
-            veiculo.Ano = Convert.ToInt32(formulario["ano"]);
-            veiculo.Cambio = (Cambio)Convert.ToInt32(formulario["cambio"]);
-            veiculo.Combustivel = (Combustivel)Convert.ToInt32(formulario["combustivel"]);
-            veiculo.Cor = corRepositorio.Obter(Convert.ToInt32(formulario["cor"]));
-            veiculo.Modelo = modeloRepositorio.Obter(Convert.ToInt32(formulario["modelo"]));
-            veiculo.Observacao = formulario["observacao"];
-            veiculo.Placa = formulario["placa"];
-            veiculo.TipoCarroceria = TipoCarroceria.Hatch;
+                veiculo.Ano = Convert.ToInt32(formulario["ano"]);
+                veiculo.Cambio = (Cambio)Convert.ToInt32(formulario["cambio"]);
+                veiculo.Combustivel = (Combustivel)Convert.ToInt32(formulario["combustivel"]);
+                veiculo.Cor = corRepositorio.Obter(Convert.ToInt32(formulario["cor"]));
+                veiculo.Modelo = modeloRepositorio.Obter(Convert.ToInt32(formulario["modelo"]));
+                veiculo.Observacao = formulario["observacao"];
+                veiculo.Placa = formulario["placa"];
+                veiculo.TipoCarroceria = TipoCarroceria.Hatch;
 
-            veiculoRepositorio.Gravar(veiculo);
+                veiculoRepositorio.Gravar(veiculo);
 
+            }
+            catch (FileNotFoundException ex)
+            {
+                MenssagemErro = $"Arquivo {ex.FileName} não encontrado!";
+            }
+            catch (DirectoryNotFoundException)
+            {
+                MenssagemErro = "Caminho não encontrado";
+            }
+            catch (Exception)
+            {
+                MenssagemErro = "Eita, algo deu erro";
+            }
+            finally
+            {
+                // não é obrigatorio, e roda sempre, com sucesso ou erro.
+                // se tiver um return, o finally também é executado;
+            }
         }
     }
 }

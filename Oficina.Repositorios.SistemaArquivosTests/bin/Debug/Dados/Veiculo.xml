@@ -116,4 +116,44 @@
     <Observacao>Obs</Observacao>
     <TipoCarroceria>Hatch</TipoCarroceria>
   </VeiculoPasseio>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Placa>ABC1234</Placa>
+    <Modelo>
+      <ID>1</ID>
+      <Nome>Ká</Nome>
+      <Marca>
+        <ID>1</ID>
+        <Nome>Ford</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <ID>1</ID>
+      <Nome>Branco</Nome>
+    </Cor>
+    <Combustivel>Flex</Combustivel>
+    <Cambio>Mecanico</Cambio>
+    <Ano>2014</Ano>
+    <Observacao>Obs</Observacao>
+    <TipoCarroceria>Hatch</TipoCarroceria>
+  </VeiculoPasseio>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Placa>ABC1234</Placa>
+    <Modelo>
+      <ID>1</ID>
+      <Nome>Ká</Nome>
+      <Marca>
+        <ID>1</ID>
+        <Nome>Ford</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <ID>1</ID>
+      <Nome>Branco</Nome>
+    </Cor>
+    <Combustivel>Flex</Combustivel>
+    <Cambio>Mecanico</Cambio>
+    <Ano>2014</Ano>
+    <Observacao>Obs</Observacao>
+    <TipoCarroceria>Hatch</TipoCarroceria>
+  </VeiculoPasseio>
 </veiculos>
