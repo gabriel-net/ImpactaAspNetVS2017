@@ -76,4 +76,44 @@
     <Ano>2019</Ano>
     <Observacao>Carro para cadastro</Observacao>
   </Veiculo>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Placa>CSS0811</Placa>
+    <Modelo>
+      <ID>7</ID>
+      <Nome>Civic</Nome>
+      <Marca>
+        <ID>4</ID>
+        <Nome>Honda</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <ID>2</ID>
+      <Nome>Preto</Nome>
+    </Cor>
+    <Combustivel>Gasolina</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Ano>2015</Ano>
+    <Observacao>aula de sexta</Observacao>
+    <TipoCarroceria>Hatch</TipoCarroceria>
+  </VeiculoPasseio>
+  <VeiculoPasseio xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <Placa>ASA8888</Placa>
+    <Modelo>
+      <ID>2</ID>
+      <Nome>Focus</Nome>
+      <Marca>
+        <ID>1</ID>
+        <Nome>Ford</Nome>
+      </Marca>
+    </Modelo>
+    <Cor>
+      <ID>1</ID>
+      <Nome>Branco</Nome>
+    </Cor>
+    <Combustivel>Etanol</Combustivel>
+    <Cambio>Automatico</Cambio>
+    <Ano>2000</Ano>
+    <Observacao>asdads</Observacao>
+    <TipoCarroceria>Hatch</TipoCarroceria>
+  </VeiculoPasseio>
 </veiculos>

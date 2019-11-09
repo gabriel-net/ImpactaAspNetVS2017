@@ -13,11 +13,11 @@ namespace Oficina.Repositorios.SistemaArquivos
 {
     public class VeiculoRepositorio : RepositorioBase
     {
-        private readonly XDocument arquivoXml;
+        private XDocument arquivoXml;
 
         public VeiculoRepositorio() : base("caminhoArquivoVeiculo")
         {
-            arquivoXml = XDocument.Load(CaminhoArquivo);
+            //arquivoXml = XDocument.Load(CaminhoArquivo);
         }
 
         public void Gravar<Tipo>(Tipo veiculo)
@@ -26,6 +26,8 @@ namespace Oficina.Repositorios.SistemaArquivos
             var serializador = new XmlSerializer(typeof(Tipo));
 
             serializador.Serialize(registro, veiculo);
+
+            arquivoXml = XDocument.Load(CaminhoArquivo);
 
             arquivoXml.Root.Add(XElement.Parse(registro.ToString()));
             arquivoXml.Save(CaminhoArquivo);

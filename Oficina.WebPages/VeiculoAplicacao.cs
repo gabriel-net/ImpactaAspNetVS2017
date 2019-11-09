@@ -72,7 +72,7 @@ namespace Oficina.WebPages
             {
                 MenssagemErro = "Caminho não encontrado";
             }
-            catch (Exception)
+            catch (Exception) //Exception, sempre por ultimo, (por segurança) caso o erro nao tenha relação com os Exceptions acima.
             {
                 MenssagemErro = "Eita, algo deu erro";
             }

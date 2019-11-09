@@ -31,17 +31,38 @@
             input[type=submit] {
                 width: 300px;
             }
+
+        #mensagemErro{
+            height: 40px;
+            background-color: #dc3545;
+            margin-bottom: 10px;
+            color: white;
+            text-align: center;
+            vertical-align: middle;
+            line-height: 40px;
+        }
+
+
     </style>
 </head>
 <body>
-    @if (IsPost)
-    {
-        aplicacao.Gravar();
-        Response.Redirect("veiculo");
-    }
 
     <h1>Cadastro de Veículos</h1>
     <hr />
+    @if (IsPost)
+    {
+        aplicacao.Gravar();
+
+        if (string.IsNullOrEmpty(aplicacao.MenssagemErro))
+        {
+            Response.Redirect("veiculo");
+        }
+        else
+        {
+            <div id="mensagemErro">@aplicacao.MenssagemErro</div>
+        }
+
+    }
     <form method="post">
         <label>Marca</label>
         <select onchange="obterModelos(this.value)" name="marca">

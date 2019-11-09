@@ -12,16 +12,17 @@ namespace Oficina.Repositorios.SistemaArquivos
 {
     public class ModeloRepositorio : RepositorioBase
     {
-        private readonly XDocument arquivoXml;
+        private XDocument arquivoXml;
 
         public ModeloRepositorio() : base("caminhoArquivoModelo")
         {
-            arquivoXml = XDocument.Load(CaminhoArquivo);
+            
         }
 
         public List<Modelo> ObterPorMarca(int marcaId)
         {
             var modelos = new List<Modelo>();
+            arquivoXml = XDocument.Load(CaminhoArquivo);
 
             foreach (var elemento in arquivoXml.Descendants("modelo"))
             {
@@ -47,6 +48,7 @@ namespace Oficina.Repositorios.SistemaArquivos
         public Modelo Obter(int id)
         {
             Modelo modelo = null;
+            arquivoXml = XDocument.Load(CaminhoArquivo);
 
             foreach (var elemento in arquivoXml.Descendants("modelo"))
             {
