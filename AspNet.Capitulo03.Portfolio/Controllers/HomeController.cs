@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -79,7 +80,19 @@ namespace AspNet.Capitulo03.Portfolio.Controllers
 
         public ActionResult Portfolio()
         {
-            return View();
+            const string diretorioImagens = "/Content/Imagens/Portfolio";
+
+            var caminhos = Directory.EnumerateFiles(Server.MapPath(diretorioImagens));
+            
+            var portfolioViewModel = new PortfolioViewModel();
+            portfolioViewModel.CaminhoImagens = new List<string>();
+
+            foreach (var caminho in caminhos)
+            {
+                portfolioViewModel.CaminhoImagens.Add($"{diretorioImagens}/{Path.GetFileName(caminho)}");
+            }
+
+            return View(portfolioViewModel);
         }
     }
 }

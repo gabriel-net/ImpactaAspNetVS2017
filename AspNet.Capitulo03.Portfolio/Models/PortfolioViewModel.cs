@@ -7,6 +7,11 @@ namespace AspNet.Capitulo03.Portfolio.Models
 {
     public class PortfolioViewModel
     {
-        public List<string> CaminhoImagens { get; set; }
+        public PortfolioViewModel()
+        {
+            //CaminhoImagens = new List<string>();
+        }
+
+        public List<string> CaminhoImagens { get; set; } = new List<string>();
     }
 }
